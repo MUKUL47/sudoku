@@ -5,75 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sudoku</title>
-    <style>
-      body {
-        margin: 0;
-      }
-      h1 {
-        margin: 0;
-        /* text-align: center; */
-        padding: 1rem 1rem 1rem 2.5rem;
-        margin-bottom: 1rem;
-        box-shadow: 1px 1px 2px 1px #8885;
-        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-        background-color: rgba(0, 0, 255, 0.151);
-      }
-      Sudoku {
-        user-select: none;
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-      }
-      canvas {
-        border: 1px solid;
-        cursor: pointer;
-      }
-      .number-btn {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        justify-items: center;
-        align-items: center;
-        gap: 0px;
-        gap: 5px;
-      }
-      .number-btn > button {
-        border: 1px solid #8886;
-        width: 80px;
-        height: 80px;
-        border-radius: 5px;
-        font-size: 2rem;
-        cursor: pointer;
-      }
-      button[selected="true"] {
-        background: #999;
-        color: #fff;
-      }
-      .flex {
-        display: flex;
-      }
-      .flex-col {
-        flex-direction: column;
-      }
-      .gap-5 {
-        gap: 5px;
-      }
-      .action-btn {
-        margin-bottom: 1rem;
-        padding: 1rem 0;
-        font-size: 1.2rem;
-      }
-      button {
-        cursor: pointer;
-      }
-    </style>
+    <link href="./style.css" rel="stylesheet" />
   </head>
   <body>
-    <h1>Sudoku</h1>
-    <Sudoku>
-      <canvas width="450px" height="450px"></canvas>
+    <nav>
+      <h1>Sudoku</h1>
+      <button target="restart" class="action-btn" onclick="restart()">
+        Restart
+      </button>
+    </nav>
+    <div class="sudoku">
+      <div class="board"></div>
       <div class="flex flex-col gap-5">
-        <button class="action-btn" onclick="location.reload()">Restart</button>
         <div class="number-btn" target="keypad">
           <button value="1">1</button>
           <button value="2">2</button>
@@ -85,8 +28,20 @@
           <button value="8">8</button>
           <button value="9">9</button>
         </div>
+        <button class="action-btn" target="clear">Clear</button>
       </div>
-    </Sudoku>
+    </div>
+    <footer>
+      Made by
+      <strong
+        ><a
+          style="color: #fff"
+          target="_blank"
+          href="https://github.com/MUKUL47/sudoku"
+          >Mukul</a
+        ></strong
+      >
+    </footer>
   </body>
   <script src="./main.js"></script>
 </html>
